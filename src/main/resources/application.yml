@@ -1,0 +1,18 @@
+keycloak:
+  auth-server-url: http://localhost:8080/realms/myrealm
+  realm: myrealm
+  resource: spring-boot-client
+  credentials:
+    secret: YOUR_CLIENT_SECRET
+  bearer-only: true
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: keycloak
+    password: keycloak
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
